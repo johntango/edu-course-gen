@@ -77,7 +77,7 @@ export const CourseGenerator = () => {
 
       const { data: orchestrationResult, error: orchestrationError } = await supabase.functions.invoke('orchestration-agent', {
         body: {
-          username: formData.username,
+          username: "John Williams",
           user_knowledge_level: formData.userKnowledgeLevel,
           course_title: formData.courseTitle,
           course_length_hours: parseInt(formData.courseLengthHours)
