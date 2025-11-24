@@ -49,6 +49,16 @@ export const CourseGenerator = () => {
       return;
     }
 
+    // Security check: Only allow "Swansea" to generate courses
+    if (formData.username.trim() !== "Swansea") {
+      toast({
+        title: "License Required",
+        description: "License required",
+        variant: "destructive"
+      });
+      return;
+    }
+
     setIsGenerating(true);
     setProgress(0);
     setGeneratedCourse(null);

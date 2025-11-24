@@ -468,18 +468,9 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      is_admin: {
-        Args: Record<PropertyKey, never>
-        Returns: boolean
-      }
-      is_instructor_global: {
-        Args: Record<PropertyKey, never>
-        Returns: boolean
-      }
-      promote_admin: {
-        Args: { target_email: string }
-        Returns: undefined
-      }
+      is_admin: { Args: never; Returns: boolean }
+      is_instructor_global: { Args: never; Returns: boolean }
+      promote_admin: { Args: { target_email: string }; Returns: undefined }
     }
     Enums: {
       [_ in never]: never
