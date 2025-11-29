@@ -1,4 +1,4 @@
-# Welcome to the Course Generation Application
+# Welcome to the Course Generation Applications
 
 HEYGEN_BASE_URL = For Debug - set this to point to dummy-heygen edge function
 For production either delete this (the default is HeyGen API) or set it to point to the HeyGen API https://api.heygen.com
