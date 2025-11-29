@@ -55,7 +55,20 @@ serve(async (req) => {
       throw new Error('OpenAI API key not configured');
     }
 
-    const courseContent = {
+    const courseContent: {
+      modules: Array<{
+        id: string;
+        title: string;
+        description: string | null;
+        position: number;
+        lessons: Array<{
+          id: string;
+          title: string;
+          content: string;
+          position: number;
+        }>;
+      }>;
+    } = {
       modules: []
     };
 
@@ -227,7 +240,7 @@ Format the content in markdown for easy rendering.`;
 
     return new Response(JSON.stringify({
       success: false,
-      error: error.message
+      error: error instanceof Error ? error.message : 'Unknown error occurred'
     }), {
       status: 500,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
